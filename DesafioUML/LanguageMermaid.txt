@@ -1,0 +1,30 @@
+classDiagram
+    direction LR
+    class iPhone {
+        -nome : String
+        +reprodutor : ReprodutorMusical
+        +aparelho : AparelhoTelefonico
+        +navegador : NavegadorInternet
+    }
+    class ReprodutorMusical {
+        <<interface>>
+        +tocar() : void
+        +pausar() : void
+        +selecionarMusica(String musica) : void
+        -duracao : int
+    }
+    class AparelhoTelefonico {
+        <<interface>>
+        +ligar(String numero) : void
+        +atender() : void
+        +iniciarCorreioVoz() : void
+    }
+    class NavegadorInternet {
+        <<interface>>
+        +exibirPagina(String url) : void
+        +adicionarNovaAba() : void
+        +atualizarPagina() : void
+    }
+    iPhone "1" -- "1" ReprodutorMusical : possui
+    iPhone "1" -- "1" AparelhoTelefonico : possui
+    iPhone "1" -- "1" NavegadorInternet : possui
